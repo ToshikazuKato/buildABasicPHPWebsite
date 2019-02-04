@@ -2,9 +2,11 @@
 <?php
 $pageTitle = "Personal Media Library";
 $section = null;
-include("inc/header.php");
-include("inc/data.php");
+
 include("inc/functions.php");
+
+include("inc/header.php");
+
  ?>
 		<div class="section catalog random">
 
@@ -14,10 +16,10 @@ include("inc/functions.php");
 
 				<ul class="items">
 					<?php
-						$random = array_rand($catalog, 4);
+						$random = random_catalog_array();
 						 // var_dump($random);
-	          foreach($random as $id) {
-	            echo get_item_html($id, $catalog[$id]);
+	          foreach($random as $item) {
+	            echo get_item_html($item);
 	          }
 	        ?>
 				</ul>
